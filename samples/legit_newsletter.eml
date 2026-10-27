@@ -1,0 +1,18 @@
+From: "GitHub" <noreply@github.com>
+Reply-To: noreply@github.com
+Return-Path: <noreply@github.com>
+To: bilal@example.com
+Subject: [GitHub] A new public key was added to your account
+Date: Tue, 27 Oct 2026 10:00:00 +0000
+Message-ID: <abc@github.com>
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=github.com; dkim=pass header.d=github.com; dmarc=pass header.from=github.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+Hi Bilal,
+
+A new SSH public key was added to your account. If you did this, no action is needed.
+You can review your keys at https://github.com/settings/keys
+
+Thanks,
+The GitHub Team

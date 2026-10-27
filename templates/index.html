@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unshield - Phishing Detector</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="brand"><span class="logo" aria-hidden="true">&#128737;</span> <span>Unshield</span></div>
+      <p class="tag">Check links, messages, emails and QR codes before you trust them.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="tabs" role="tablist" aria-label="What do you want to check?">
+      <button role="tab" class="tab active" data-tab="url" aria-selected="true">Link</button>
+      <button role="tab" class="tab" data-tab="text" aria-selected="false">Message / SMS</button>
+      <button role="tab" class="tab" data-tab="email" aria-selected="false">Email</button>
+      <button role="tab" class="tab" data-tab="qr" aria-selected="false">QR code</button>
+    </nav>
+
+    <section class="panel" id="panel-url">
+      <label for="in-url">Paste a link</label>
+      <input id="in-url" type="text" placeholder="http://paypa1-secure-login.xyz/verify" autocomplete="off" spellcheck="false">
+      <button class="go" data-run="url">Analyse link</button>
+    </section>
+
+    <section class="panel" id="panel-text" hidden>
+      <label for="in-text">Paste the message text (English or Roman Urdu)</label>
+      <textarea id="in-text" rows="6" placeholder="Aap ka account foran block ho jaye ga. Abhi OTP bhejein..."></textarea>
+      <button class="go" data-run="text">Analyse message</button>
+    </section>
+
+    <section class="panel" id="panel-email" hidden>
+      <label for="in-email-file">Upload a .eml file (Gmail: open mail &rarr; &#8942; &rarr; Download message)</label>
+      <input id="in-email-file" type="file" accept=".eml,message/rfc822,text/plain">
+      <label for="in-email-raw">...or paste the raw email source</label>
+      <textarea id="in-email-raw" rows="6" spellcheck="false" placeholder="From: ...&#10;Subject: ..."></textarea>
+      <button class="go" data-run="email">Analyse email</button>
+    </section>
+
+    <section class="panel" id="panel-qr" hidden>
+      <label for="in-qr">Upload a photo or screenshot of the QR code</label>
+      <input id="in-qr" type="file" accept="image/*">
+      <img id="qr-preview" alt="" hidden>
+      <button class="go" data-run="qr">Scan &amp; analyse QR</button>
+    </section>
+
+    <p class="note">Nothing here opens the link for you. Analysis is done by rules on your own machine; no data is sent to third parties.</p>
+
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <div id="result"></div>
+  </main>
+
+  <footer class="wrap foot">Unshield prototype &middot; scores are indicators, not guarantees. When in doubt, don't click - open the official site yourself.</footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
